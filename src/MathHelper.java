@@ -11,12 +11,12 @@ public class MathHelper{
 		}
 		return total/tempos.size();
 	}
-	public static long desvioPadrao(List<Long> tempos) {
+	public static double desvioPadrao(List<Long> tempos) {
 		long media = MathHelper.media(tempos);
 		long SomaValorMenosMediaAoQuadrado = 0;
 		for(long tempo : tempos) {
 			SomaValorMenosMediaAoQuadrado += (tempo - media)*(tempo - media);
 		}
-		return SomaValorMenosMediaAoQuadrado/tempos.size();	
+		return Math.sqrt(SomaValorMenosMediaAoQuadrado/tempos.size());	
 	}
 }

@@ -1,3 +1,5 @@
+package Server;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
@@ -36,9 +38,9 @@ public class RMIServer implements OperationsInterface {
     	  OperationsInterface stub = (OperationsInterface) UnicastRemoteObject.exportObject(obj, 0);
     	  
           // Bind the remote object's stub in the registry
-          //Registry registry = LocateRegistry.getRegistry();
-    	  Registry registry = LocateRegistry.createRegistry(1099);
-          registry.bind("OperationsInterface", stub);
+          
+    	  //Registry registry = LocateRegistry.createRegistry(1099);
+          Naming.rebind("OperationsInterface", stub);
           System.err.println("Server ready");
       } catch (Exception e) {
           System.err.println("Server exception: " + e.toString());

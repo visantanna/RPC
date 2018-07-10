@@ -4,7 +4,7 @@ import java.util.List;
 public class Relatorio {
 	private int numeroDaOperacao;
 	private long media;
-	private long desvioPadrao;
+	private double desvioPadrao;
 	private List<Long> execucoes = new ArrayList<Long>(); 
 	
 	public Relatorio(int numeroDaOperacao) {
@@ -31,11 +31,11 @@ public class Relatorio {
 		this.media = media;
 	}
 
-	public long getDesvioPadrao() {
+	public double getDesvioPadrao() {
 		return desvioPadrao;
 	}
 
-	public void setDesvioPadrao(long desvioPadrao) {
+	public void setDesvioPadrao(double desvioPadrao) {
 		this.desvioPadrao = desvioPadrao;
 	}
 
